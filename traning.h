@@ -3,7 +3,8 @@
 
 #ifndef __TRANING_H__
 #define __TRANING_H__
-#define PRINTVALUES(__val1__,__val2__,__fmt1__,__fmt2__) (printf("(%03d):VAL1="__fmt1__",VAL2="__fmt2__"\n",__LINE__,__val1__,__val2__))
+#define PRINTVALUES(__val1__,__val2__,__fmt1__,__fmt2__) \
+        (printf("(%03d):VAL1="__fmt1__",VAL2="__fmt2__"\n",__LINE__,__val1__,__val2__))
 typedef unsigned char       BYTE,*PBYTE;
 typedef unsigned int        UINT,*PUINT;
 typedef unsigned long int   ULONG,*PULONG;
