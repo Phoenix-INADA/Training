@@ -30,7 +30,10 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "args": [
+                "ABCDEF",
+                "123456",
+            ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
