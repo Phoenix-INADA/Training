@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "traning.h"
+#include "training.h"
 
 // 静的領域変数 宣言
 static STRUC st1[] = {
