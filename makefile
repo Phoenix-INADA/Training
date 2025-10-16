@@ -1,20 +1,25 @@
-CC =  gcc 
-CFLAGS = -fdiagnostics-color=always -g -c
-
+CC      = gcc
+CFLAGS  = -Wall -Wextra -fdiagnostics-color=always -g
+LDFLAGS =
 OBJPATH = .
 SRCPATH = .
 INCPATH = .
 
-OBJS = $(OBJPATH)/training.o 
-TARGET = $(OBJPATH)/training
+TARGET_NAME = training
+TARGET      = $(OBJPATH)/$(TARGET_NAME)
 
-all:	$(TARGET)
+SRCS = $(SRCPATH)/training.c
+OBJS = $(patsubst $(SRCPATH)/%.c, $(OBJPATH)/%.o, $(SRCS))
+
+.PHONY: all clean
+
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC)  $(OBJS) -o $(TARGET)
+	$(CC) $(LDFLAGS) $^ -o $@
 
 $(OBJPATH)/training.o: $(SRCPATH)/training.c $(INCPATH)/training.h
-	$(CC) $(CFLAGS) -I$(INCPATH) -o $(OBJPATH)/training.o $(SRCPATH)/training.c
+	$(CC) $(CFLAGS) -c -I$(INCPATH) $< -o $@
 
-clean:    rm -f $(OBJPATH)/*.o $(TARGET)
-
+clean:
+	rm -f $(OBJS) $(TARGET)
