@@ -16,7 +16,7 @@ static STRUC st1[] = {
 /*
   ステップ１  整数型変数とポインタ　＋ 関数呼び出し
 */
-UINT  Func1(UINT uiVal1,PUINT puiVal2) {
+static UINT  Func1(UINT uiVal1,PUINT puiVal2) {
     // 関数コール時のメモリ配置（スタック）を確認
 
     // パラメータのアドレス値を確認
