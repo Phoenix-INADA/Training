@@ -34,7 +34,7 @@ static UINT  Func1(UINT uiVal1,PUINT puiVal2) {
 int main(int argc,char **argv)
 {
     // デバッガでコマンドラインパラメータの設定状況を確認
-
+    PRINTVALUES(argc,*argv,"%d","%s");
     // 符号なし４バイト変数を定義
     UINT  uiVal1=0,uiVal2=0;
     // 構造体ポインタを定義して配列番号１のアドレスを設定
